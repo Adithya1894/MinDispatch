@@ -7,13 +7,19 @@ import java.util.Queue;
 import edu.giocc.MinDispatch.Event;
 
 public class EventQueue {
+
 	private static EventQueue instance;
 	private Queue<Event> eventQueue;
 	
 	private EventQueue() {
 		eventQueue = new LinkedList<Event>();
 	}
-	
+
+	/**
+	 * singleton instance to make sure only one
+	 * instance exists
+	 * @return
+	 */
 	public static EventQueue getInstance() {
 		if (instance == null)
 			instance = new EventQueue();
